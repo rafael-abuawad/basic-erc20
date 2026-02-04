@@ -1,4 +1,4 @@
-# basic-erc20
+# Basic ERC20
 
 A minimal ERC20 token implementation in [Vyper](https://vyperlang.org/), deployable to Arbitrum via [Titanoboa](https://github.com/vyperlang/titanoboa).
 
