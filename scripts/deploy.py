@@ -5,9 +5,9 @@ from eth_account import Account
 
 
 def load_keystore_account():
-    """Carga una cuenta desde un archivo keystore de forma segura."""
+    """Load an account from a keystore file securely."""
     with open("account.keystore.json", "r") as acc:
-        password = getpass.getpass("\t Ingrese su contraseña del Keystore: ")
+        password = getpass.getpass("\tEnter your keystore password: ")
         encrypted_account = acc.read()
         account_pk = Account.decrypt(encrypted_account, password)
         return Account.from_key(account_pk)
@@ -20,7 +20,7 @@ def main():
         account = load_keystore_account()
         boa.env.add_account(account)
 
-        print(f"Desplegando contrato con la cuenta: {account.address}...")
+        print(f"Deploying contract with account: {account.address}...")
 
         erc20_contract = boa.load(
             "contracts/ERC20.vy",
@@ -28,7 +28,7 @@ def main():
             "MTB",  # _symbol
         )
 
-        print(f"¡Éxito! Contrato desplegado en: {erc20_contract.address}")
+        print(f"Success! Contract deployed at: {erc20_contract.address}")
         return erc20_contract
 
 
