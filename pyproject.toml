@@ -3,8 +3,9 @@ name = "basic-erc20"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
+    "eth-account>=0.13.7",
     "mamushi>=0.1.0",
     "titanoboa>=0.2.8",
 ]
